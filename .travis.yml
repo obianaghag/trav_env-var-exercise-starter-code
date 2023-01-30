@@ -15,9 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node --build-arg NAME=${NAME} .
-  - docker tag simple-node godoncode/simple-node:latest
+  - docker build -t simple-node2 --build-arg NAME=${NAME} .
+  - docker tag simple-node2 godoncode/simple-node2:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push godoncode/simple-node
+  - docker push godoncode/simple-node2
